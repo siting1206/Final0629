@@ -1,4 +1,4 @@
-package com.example.test.weather
+package com.example.roomexample.weather
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
