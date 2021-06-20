@@ -78,8 +78,9 @@
             android:id="@+id/spot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FF0000"
+            android:layout_marginTop="30dp"
             android:text="附近景點、設施"
+            android:textColor="#FF0000"
             android:textSize="24sp" />
 
         <TextView

@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.roomexample.MapFragment"
-        android:label="MapFragment"
+        android:label="Google Map"
         tools:layout="@layout/fragment_map">
         <argument
             android:name="name"
@@ -54,8 +54,8 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/weatherFragment"
+        android:id="@+id/Weather"
         android:name="com.example.roomexample.WeatherFragment"
-        android:label="WeatherFragment"
+        android:label="Current Weather"
         tools:layout="@layout/fragment_weather" />
 </navigation>
