@@ -1,4 +1,4 @@
-package com.example.test.weather
+package com.example.roomexample.weather
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -7,20 +7,25 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 class WeatherViewModel : ViewModel() {
 
-    val cities = listOf<City>(
-        City("Yilan", "宜蘭"),
-        City("Luodong", "羅東"),
-        City("Su-ao", "蘇澳"),
-        City("Toucheng", "頭城"),
-        City("Jiaosi", "礁溪"),
-        City("Jhuanwei", "壯圍"),
-        City("Yuanshan", "員山"),
-        City("Dongshan", "冬山"),
-        City("Wujie", "五結"),
-        City("Sansing", "三星"),
-        City("Datong", "大同"),
-        City("Nan-ao", "南澳")
+    val cities = kotlin.collections.listOf<com.example.test.weather.City>(
+        com.example.test.weather.City("Hualien", "花蓮"),
+        com.example.test.weather.City("Banqiao ", "板橋")
     )
+
+    /*val cities = listOf<City>(
+        City( "Yilan", "宜蘭"),
+        City( "Luodong", "羅東"),
+        City( "Su-ao", "蘇澳"),
+        City( "Toucheng", "頭城"),
+        City( "Jiaosi", "礁溪"),
+        City( "Jhuanwei", "壯圍"),
+        City( "Yuanshan", "員山"),
+        City( "Dongshan", "冬山"),
+        City( "Wujie", "五結"),
+        City( "Sansing", "三星"),
+        City( "Datong", "大同"),
+        City( "Nan-ao", "南澳")
+    )*/
 
     //extract city names into two seperated lists
     val cities_ch = MutableList(cities.size) { cities[it].cName }

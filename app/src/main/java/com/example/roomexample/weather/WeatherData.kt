@@ -1,4 +1,4 @@
-package com.example.test.weather
+package com.example.roomexample.weather
 
 //define data classes for the weather forecast response JSON data
 data class WeatherData(val name: String, val coord: Coord, val main: Temperature, val weather: List<Weather>)

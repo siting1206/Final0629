@@ -1,4 +1,4 @@
-package com.example.roomexample
+package com.example.roomexample.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.test.weather
+package com.example.roomexample.weather
 
 //define data class as the data source of the spinner or recyclerview
 data class City(val eName: String, val cName: String)
