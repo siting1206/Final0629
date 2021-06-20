@@ -3,7 +3,6 @@ package com.example.roomexample
 import android.app.Activity
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import android.widget.SearchView
@@ -11,14 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomexample.Adapter.SceneAdapter
 import com.example.roomexample.Adapter.SwipeHandler
-import com.example.roomexample.database.SceneDatabase
 import com.example.roomexample.databinding.ListFragmentBinding
 
 //fragment with a recyclerview to show a list of scenes

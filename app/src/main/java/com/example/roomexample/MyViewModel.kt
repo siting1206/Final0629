@@ -2,12 +2,13 @@ package com.example.roomexample
 
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.roomexample.database.Scene
 import com.example.roomexample.database.SceneDatabase
-import com.example.roomexample.database.SceneDatabaseDao
+import com.example.roomexample.weather.City
+import com.example.roomexample.weather.CityWeather
+import com.example.roomexample.weather.GetService
 import kotlinx.coroutines.launch
 
 //viewmodel need to know the database dao (passed argument here) for accessing data from the database
@@ -28,12 +29,61 @@ class MyViewModel(application: Application) : AndroidViewModel(application) {
     //list of cities in Taiwan
     //the following way is sometime not working: don't know
     val cityList : Array<String> = application.resources.getStringArray(R.array.township_array)
-//    val cityList = arrayOf(
-//        "花蓮縣", "台東縣", "宜蘭縣", "屏東縣", "台東縣", "高雄市",
-//        "雲林縣", "彰化縣", "臺南市", "嘉義縣", "嘉義市", "臺中市", "臺北市",
-//        "新北市", "新竹縣", "新竹市", "基隆市", "苗栗縣", "桃園市", "南投縣", "澎湖縣",
-//        "金門縣"
-//    )
+
+
+    val cities = listOf(
+        City("Yilan", "宜蘭"),
+        City("Luodong ", "羅東"),
+        City("Su-ao","蘇澳"),
+        City("Toucheng","頭城"),
+        City("Jiaosi","礁溪"),
+        City("Jhuanwei","壯圍"),
+        City("Yuanshan","員山"),
+        City("Dongshan","冬山"),
+        City("Wujie","五結"),
+        City("Sensing","三星"),
+        City("Datong","大同"),
+        City("Nan-ao","南澳")
+    )
+
+    //extract city names into two seperated lists
+    val cities_ch = MutableList(cities.size) { cities[it].cName }
+    val cities_en = MutableList(cities.size) { cities[it].eName }
+
+    //add the selection hint text to be the first item
+    init {
+        cities_ch.add(0, "選擇一個鄉鎮")
+        cities_en.add(0, "Select one city")
+    }
+
+    //livedata
+    val selectedCityWeather = MutableLiveData<CityWeather>()
+
+    //Coroutine version
+    fun sendRetrofitRequest(location: String) {
+        viewModelScope.launch {
+            try {
+                val result =
+                    GetService.retrofitService.getAppData(location, "metric", "zh_tw", API_KEY)
+                val temp = CityWeather(
+                    result.name,
+                    result.main.temp,
+                    result.weather[0].description,
+                    result.weather[0].icon
+                )
+                selectedCityWeather.value = temp
+                Log.d("Main", temp.toString())
+            } catch (e: Exception) {
+                Log.d("Main", "Fail to access: ${e.message}")
+            }
+        }
+    }
+
+    companion object {  //static global constants
+        const val API_URL = "https://api.openweathermap.org/"
+        const val ICON_URL = "https://openweathermap.org/img/wn/"
+        const val API_KEY = "843b0a7691567bf32812c9c01939d921"
+    }
 
     init {
         getAllScenes()

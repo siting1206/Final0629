@@ -9,14 +9,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.test.R
-import com.example.test.databinding.FragmentWeatherBinding
-import com.example.test.weather.WeatherViewModel
+import com.example.roomexample.databinding.FragmentWeatherBinding
+import com.example.roomexample.MyViewModel
 
 
 class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentWeatherBinding
-    lateinit var viewModel: WeatherViewModel
+    lateinit var viewModel: MyViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +25,10 @@ class WeatherFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_weather, container, false)
 
         //get the viewModel
-        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
         //configure the layout data binding
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
 
 
 //        configure the spinner

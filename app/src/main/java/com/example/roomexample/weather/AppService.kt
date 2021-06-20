@@ -1,5 +1,6 @@
 package com.example.roomexample.weather
 
+import com.example.roomexample.MyViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -14,12 +15,14 @@ import retrofit2.http.Query
 * https://api.openweathermap.org/data/2.5/weather?q=Hualien&units=metric&lang=zh_tw&appid=YOUR_API_KEY
 */
 
+private lateinit var viewModel: MyViewModel
+
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
 private val retrofit = Retrofit.Builder()
-    .baseUrl(WeatherViewModel.API_URL)
+    .baseUrl(MyViewModel.API_URL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .build()
 

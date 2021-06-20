@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
-            type="com.example.test.weather.WeatherViewModel" />
+            type="com.example.roomexample.MyViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
