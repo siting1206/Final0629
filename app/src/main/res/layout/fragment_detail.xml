@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="scene"
+            type="com.example.roomexample.database.Scene" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".DetailFragment">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{scene.name}"
+            android:textColor="#000000"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/image_pic"
+            android:layout_width="359dp"
+            android:layout_height="198dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitCenter"
+            app:asIcon="@{false}"
+            app:setImage="@{scene}"
+            tools:src="@drawable/photo3" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="營業時間"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{scene.time}"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/map_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show on the map" />
+
+        <TextView
+            android:id="@+id/hot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="熱門小吃"
+            android:textColor="#FF0000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/food_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{scene.food}"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/spot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:text="附近景點、設施"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/attraction_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="@{scene.attraction}"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</layout>

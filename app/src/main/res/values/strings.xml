@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TravelAround</string>
+
+        <string-array name="township_array">
+            <item>宜蘭市</item>
+            <item>頭城鎮</item>
+            <item>礁溪鄉</item>
+            <item>壯圍鄉</item>
+            <item>員山鄉</item>
+            <item>羅東鎮</item>
+            <item>三星鄉</item>
+            <item>五結鄉</item>
+            <item>冬山鄉</item>
+            <item>蘇澳鎮</item>
+            <item>大同鄉</item>
+        </string-array>
+
+</resources>
