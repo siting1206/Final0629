@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/ball_icon"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="166dp"
+            android:layout_height="111dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             app:asIcon="@{true}"
