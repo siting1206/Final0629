@@ -50,4 +50,9 @@
             android:name="address"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.roomexample.WeatherFragment"
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather" />
 </navigation>
