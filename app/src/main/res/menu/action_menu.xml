@@ -14,8 +14,8 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
     <item
-        android:id="@+id/weather"
-        android:icon="@android:drawable/outline_wb_cloudy_24"
+        android:id="@+id/weatherFragment"
+        android:icon="@drawable/outline_wb_cloudy_24"
         android:title="Weather"
         app:showAsAction="always" />
 </menu>
