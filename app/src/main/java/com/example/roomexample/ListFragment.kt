@@ -95,7 +95,7 @@ class ListFragment : Fragment() {
 //               || super.onOptionsItemSelected(item)
         when (item.itemId) {
             R.id.addScene -> requireView().findNavController().navigate(ListFragmentDirections.actionListFragmentToAddFragment(0))
-            R.id.weatherFragment ->requireView().findNavController().navigate(ListFragmentDirections.actionListFragmentToWeatherFragment())
+            R.id.weatherFragment ->requireView().findNavController().navigate(ListFragmentDirections.actionlistFragmentToWeatherFragment())
         }
         return super.onOptionsItemSelected(item)
     }

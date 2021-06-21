@@ -17,8 +17,8 @@
             android:id="@+id/action_listFragment_to_addFragment"
             app:destination="@id/addScene" />
         <action
-            android:id="@+id/action_listFragment_to_weatherFragment"
-            app:destination="@id/weatherFragment" />
+            android:id="@+id/action_listFragment_to_Weather"
+            app:destination="@id/Weather" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
