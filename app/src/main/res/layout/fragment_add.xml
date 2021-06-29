@@ -64,6 +64,18 @@
             app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
         <EditText
+            android:id="@+id/phoneNumber_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:text="@{scene.phoneNumber}"
+            android:hint="PhoneNumber"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/address_edit"
+            app:layout_constraintTop_toBottomOf="@+id/address_edit" />
+
+        <EditText
             android:id="@+id/food_edit"
             android:layout_width="341dp"
             android:layout_height="47dp"
@@ -90,11 +102,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="16dp"
             android:hint="Open Hours"
             android:inputType="textPersonName"
             android:text="@{scene.time}"
-            app:layout_constraintStart_toStartOf="@+id/address_edit"
-            app:layout_constraintTop_toBottomOf="@+id/address_edit" />
+            app:layout_constraintStart_toStartOf="@+id/phoneNumber_edit"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumber_edit" />
 
         <EditText
             android:id="@+id/attraction_edit"

@@ -26,7 +26,7 @@ class AddFragment : Fragment() {
     private lateinit var binding: FragmentAddBinding
     private lateinit var viewModel: MyViewModel
     private var editMode = false
-    private var newScene = Scene("", "", "","", 0,"","")
+    private var newScene = Scene("", "", "","", "",0,"","")
     private val PICKUPIMAGE = 1
 
     override fun onCreateView(
@@ -115,6 +115,7 @@ class AddFragment : Fragment() {
         newScene.time = binding.timeEdit.text.toString()
         newScene.food = binding.foodEdit.text.toString()
         newScene.attraction = binding.attractionEdit.text.toString()
+        newScene.phoneNumber = binding.phoneNumberEdit.text.toString()
 
         //save data into the database
         if (editMode)

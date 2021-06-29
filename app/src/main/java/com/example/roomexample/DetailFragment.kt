@@ -1,5 +1,7 @@
 package com.example.roomexample
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -42,6 +44,13 @@ class DetailFragment : Fragment() {
             val passedScene = viewModel.selectedScene.value!!
             it.findNavController()
                 .navigate(DetailFragmentDirections.actionDetailFragmentToMapFragment(passedScene.name, passedScene.address))
+        }
+
+        binding.dialButton.setOnClickListener {
+            val phoneNo = viewModel.selectedScene.value?.phoneNumber
+            val dial = "tel:$phoneNo"
+            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(dial)))
+
         }
 
         return binding.root

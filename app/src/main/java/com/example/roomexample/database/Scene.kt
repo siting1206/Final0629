@@ -9,6 +9,7 @@ data class Scene(
     var city: String,
     var name: String,
     var address: String,
+    var phoneNumber: String,
     var time: String,
     var photoId: Int,
     var food: String,
